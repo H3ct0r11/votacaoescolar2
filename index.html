@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container" class="celular-frame login-frame">
+        <div class="logo-placeholder">
+            <!-- Coloque o link da logo da escola no src da imagem abaixo -->
+            <img src="https://ui-avatars.com/api/?name=Escola&background=6f52d9&color=fff&size=100" alt="Logo da Escola">
+        </div>
+        <h2>Acesso do Eleitor</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="E-mail escolar" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button type="submit" class="btn-votar">Entrar para Votar</button>
+        </form>
+        <p id="login-erro" class="erro-msg"></p>
+    </div>
+
+    <main class="celular-frame" id="votacao-container" style="display: none;">
+        <header> 
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h1 style="margin-bottom: 0;">Votação Escolar</h1>
+                <button id="btn-sair" class="btn-sair">Sair</button>
+            </div>
+        </header>
+
+        <section class="candidatos-container">
+            
+            <!-- Candidato 1: Maria -->
+             <article class="candidatos-coluna">
+
+                <div class="foto-circular">
+                    <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/4314066-afro-mulher-pos-graduada-gratis-vetor.jpg" alt="">
+                </div>
+
+                <div class="caixa-nome">
+                    <span class="bolinha-verde" id="dot-candidato_1"></span>
+                    <span class="nome">Maria</span>
+                </div>
+
+                <div class="caixa-propostas">
+                    <span class="titulo-propostas">Propostas</span>
+                    <ul>
+                        <li>Torneios esportivos mensais</li>
+                        <li>Melhoria na cantina</li>
+                        <li>Musica na hora do intervalo</li>
+                    </ul>
+                </div>
+
+                <button class="btn-votar" data-id="candidato_1">Votar em Maria</button>
+
+             </article>
+
+            <!-- Candidato 2: Guilherme -->
+            <article class="candidatos-coluna">
+
+                <div class="foto-circular">
+                    <img src="https://static.vecteezy.com/ti/vetor-gratis/t2/18969941-feliz-estudante-de-pos-graduacao-afro-com-um-diploma-em-touca-e-roupao-de-formatura-jovem-que-se-formou-nos-estudos-ilustracaoial-plana-sobre-fundo-branco-vetor.jpg" alt="">
+                </div>
+
+                <div class="caixa-nome">
+                    <span class="bolinha verde" id="dot-candidato_2"></span>
+                    <span class="nome">Guilherme</span>
+                </div>
+
+                <div class="caixa-propostas">
+                    <span class="titulo-propostas">Propostas</span>
+                    <ul>
+                        <li>Grupos escolares</li>
+                        <li>Melhoria nos arcondicionados</li>
+                        <li>Grupos esportivos</li>
+                    </ul>
+                </div>
+
+                <button class="btn-votar" data-id="candidato_2">Votar em Guilherme</button>
+
+             </article>
+
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

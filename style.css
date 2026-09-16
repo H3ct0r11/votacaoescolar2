@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f2f4f8; /* Fundo clarinho */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Moldura que simula o formato do celular da imagem */
+.celular-frame {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    border: 3px solid #1a1a1a;
+    border-radius: 36px;
+    padding: 28px 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+/* Distribui os dois candidatos lado a lado */
+.candidatos-container {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.candidatos-coluna {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* Foto circular genérica com degradê suave */
+/* Container da foto circular */
+.foto-circular {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #e9ecef; 
+    border: 2px solid #a3b8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    margin-bottom: 12px;
+}
+
+
+.foto-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Essa é a mágica que impede a foto de ficar achatada */
+}
+
+
+/* Caixa do nome do candidato */
+.caixa-nome {
+    width: 100%;
+    border: 2px solid #111;
+    border-radius: 8px;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    background-color: #0ce5cc;
+}
+
+.caixa-nome .nome {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #111;
+}
+
+/* Bolinha verde indicadora de voto */
+.bolinha-verde {
+    width: 11px;
+    height: 11px;
+    background-color: #03801c;
+    border-radius: 50%;
+    display: none;
+}
+
+.bolinha-verde.ativa {
+    display: inline-block;
+}
+
+/* Caixa maior de propostas */
+.caixa-propostas {
+    width: 100%;
+    min-height: 170px;
+    border: 2px solid #111;
+    border-radius: 4px;
+    padding: 10px 8px;
+    background-color: #fff;
+    margin-bottom: 14px;
+}
+
+.titulo-propostas {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #13e94c;
+}
+
+.caixa-propostas ul {
+    padding-left: 18px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.caixa-propostas li {
+   margin-bottom: 6px; 
+}
+
+/* Botões roxos com formato arredondado em destaque */
+.btn-votar {
+    width: 100%;
+    background: linear-gradient(180deg, #6f52d9 0%, #563bbd 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    padding: 9px 6px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(111, 82, 217, 0.35);
+    transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn-votar:hover {
+    opacity: 0.85;
+    transform: translateY(-5px);
+}
+
+.btn-votar:active {
+   transform: scale(0.85);
+}
+
+@media (max-width: 480px) {
+    .candidatos-container {
+        flex-direction: column; 
+        gap: 24px; 
+    }
+
+    .caixa-propostas {
+        min-height: auto;
+    }
+
+    .btn-votar {
+        padding: 14px 6px; 
+        font-size: 0.9rem;
+    }
+}
